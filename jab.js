@@ -13,7 +13,7 @@ const imageButton = document.getElementById('imageButton');
             setup() {
                 const location = ref('');
                 const weatherData = ref(null);
-                const loading = ref(false);
+				                const loading = ref(false);
                 const error = ref(null);
                 const locationDisplay = ref('');
 
@@ -136,40 +136,6 @@ const imageButton = document.getElementById('imageButton');
                     return weatherCodes[code] || 'Неизвестно';
                 };
 
-                const getWeatherIconClass = (code) => {
-                    const iconMap = {
-                        0: 'fas fa-sun',
-                        1: 'fas fa-cloud-sun',
-                        2: 'fas fa-cloud-sun',
-                        3: 'fas fa-cloud',
-                        45: 'fas fa-smog',
-                        48: 'fas fa-smog',
-                        51: 'fas fa-cloud-rain',
-                        53: 'fas fa-cloud-rain',
-                        55: 'fas fa-cloud-showers-heavy',
-                        56: 'fas fa-cloud-rain',
-                        57: 'fas fa-cloud-showers-heavy',
-                        61: 'fas fa-cloud-rain',
-                        63: 'fas fa-cloud-showers-heavy',
-                        65: 'fas fa-cloud-showers-heavy',
-                        66: 'fas fa-snowflake',
-                        67: 'fas fa-snowflake',
-                        71: 'fas fa-snowflake',
-                        73: 'fas fa-snowflake',
-                        75: 'fas fa-snowflake',
-                        77: 'fas fa-snowflake',
-                        80: 'fas fa-cloud-rain',
-                        81: 'fas fa-cloud-showers-heavy',
-                        82: 'fas fa-cloud-showers-heavy',
-                        85: 'fas fa-snowflake',
-                        86: 'fas fa-snowflake',
-                        95: 'fas fa-bolt',
-                        96: 'fas fa-bolt',
-                        99: 'fas fa-bolt'
-                    };
-                    return iconMap[code] || 'fas fa-question';
-                };
-
                 return {
                     location,
                     weatherData,
@@ -181,7 +147,6 @@ const imageButton = document.getElementById('imageButton');
                     weatherDescription,
                     windDirection,
                     dailyForecast,
-                    getWeatherIconClass
                 };
             }
         }).mount('#app');
