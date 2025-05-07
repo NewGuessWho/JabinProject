@@ -58,7 +58,7 @@
                     </div>
                     <div class="text-right">
                         <div class="flex items-center justify-end">
-                            <i :class="getWeatherIconClass(weatherData.current.weather_code)" class="weather-icon text-3xl mr-2"></i>
+
                             <span class="capitalize">{{ weatherDescription }}</span>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     <span class="text-7xl font-bold glow">{{ weatherData.current.temperature_2m }}°</span>
                     <div class="ml-4">
                         <div class="flex items-center">
-                            <i class="fas fa-temperature-low mr-2"></i>
+
                             <span>Ощущается как: {{ weatherData.current.apparent_temperature }}°</span>
                         </div>
                         <div class="flex items-center">
@@ -81,20 +81,15 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-white bg-opacity-40 rounded-lg p-4">
                         <div class="flex items-center mb-2">
-                            <i class="fas fa-wind mr-2"></i>
                             <span>Сила Стрибога</span>
                         </div>
                         <div class="flex items-center">
-                            <div class="wind-arrow mr-3" :style="{ transform: `rotate(${weatherData.current.wind_direction_10m}deg)` }">
-                                <i class="fas fa-arrow-up text-xl"></i>
-                            </div>
                             <span>{{ weatherData.current.wind_speed_10m }} м/с</span>
                         </div>
                     </div>
 
                     <div class="bg-white bg-opacity-40 rounded-lg p-4">
                         <div class="flex items-center mb-2">
-                            <i class="fas fa-tachometer-alt mr-2"></i>
                             <span>Давление для Земли-Матушки</span>
                         </div>
                         <div>
@@ -104,7 +99,6 @@
 
                     <div class="bg-white bg-opacity-40 rounded-lg p-4">
                         <div class="flex items-center mb-2">
-                            <i class="fas fa-cloud-rain mr-2"></i>
                             <span>Сколько накапало</span>
                         </div>
                         <div>
@@ -114,7 +108,6 @@
 
                     <div class="bg-white bg-opacity-40 rounded-lg p-4">
                         <div class="flex items-center mb-2">
-                            <i class="fas fa-compass mr-2"></i>
                             <span>Куда дует ветер приключений</span>
                         </div>
                         <div>
@@ -129,7 +122,6 @@
                 <div class="flex flex-col gap-4">
                     <div v-for="(day, index) in dailyForecast" :key="index" class="flex items-center justify-between">
                         <div class="text-sm">{{ day.date }}</div>
-                        <i :class="getWeatherIconClass(day.weather_code)" class="weather-icon text-xl"></i>
                         <div class="flex gap-2">
                             <span class="text-red-600">{{ day.temperature_max }}°</span>
                             <span class="text-blue-600">{{ day.temperature_min }}°</span>
@@ -147,6 +139,6 @@
 	
 	<img id="displayImage" src="https://img.freepik.com/premium-photo/yellow-black-frog-against-surface-forest-upside-down-which-is-held-by-paw-halloween-surface_165656-129.jpg" alt="секизображение" width="200"> 
 
-	<script src="jab.js"></script>
+    <script src="jab.js"></script>
 </body>
 </html>
